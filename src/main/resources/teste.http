@@ -1,0 +1,10 @@
+POST http://localhost:8080/figurinhas
+Content-Type: application/json
+
+{
+  "nome": "bernardo hanashiro - Nº 12345678",
+  "selecao": "japones",
+  "posicao": "zagueiro",
+  "preco": 8.50,
+  "raridade": "Rara"
+}
