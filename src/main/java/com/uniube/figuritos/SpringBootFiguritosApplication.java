@@ -10,7 +10,7 @@ public class SpringBootFiguritosApplication {
     public static void main(String[] args) {
 
         SpringApplication.run(SpringBootFiguritosApplication.class, args);
-
+        System.out.println("oi");
     }
 
 }
