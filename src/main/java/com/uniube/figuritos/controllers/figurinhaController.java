@@ -20,6 +20,7 @@ public class figurinhaController {
     public figurinhas salvarFigurinha(@RequestBody figurinhas novaFigurinha) {
         return service.cadastrarFigurinhas(novaFigurinha); // Chama o método do seu Service
     }
+    // frontend
 
     // Listar todos (GET)
     @GetMapping

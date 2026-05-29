@@ -1,0 +1,53 @@
+
+
+body {
+    background-color: #49111c;
+    margin: 0;
+}
+
+/* 1. CONFIGURAÇÃO DO CONTAINER PAI */
+#login {
+    background-color: #0a0908;
+
+    width: 600px;
+    height: 500px;
+
+    margin-left: 30vw;
+    margin-top: 10vw;
+    border-radius: 30px;
+    padding: 30px;
+    box-sizing: border-box;
+
+    /* Ativa o Grid */
+    display: grid;
+    /* Define duas colunas de tamanhos iguais */
+    grid-template-columns: 1fr 1fr;
+    /* Centraliza os elementos verticalmente dentro do espaço deles */
+    align-items: start;
+    gap: 20px;
+
+    /* O MAPA DO SEU GRID: Aqui você diz quem fica do lado de quem */
+    grid-template-areas:
+        "esquerda direita";
+}
+
+/* 2. CONFIGURAÇÃO DOS FILHOS (DANDO OS NOMES ÀS ÁREAS) */
+
+#titulo-login {
+    color: #f2f4f3;
+    font-size: 45px;
+    text-align: start;
+    font-family: "Bebas Neue", sans-serif;
+
+    /* Vincula este elemento à área da esquerda no mapa */
+    grid-area: esquerda;
+}
+
+#subTitulo-login {
+    color: #f2f4f3;
+    font-size: 45px;
+    font-family: "Bebas Neue", sans-serif;
+
+    /* Vincula este elemento à área da direita no mapa */
+    grid-area: direita;
+}
