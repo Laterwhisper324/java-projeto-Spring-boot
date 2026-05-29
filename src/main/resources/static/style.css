@@ -1,53 +1,105 @@
-
-
 body {
-    background-color: #49111c;
     margin: 0;
-}
+    width: 80vw;
+    height: 80vh;
 
-/* 1. CONFIGURAÇÃO DO CONTAINER PAI */
-#login {
+    /* 1. A cor de fundo principal (os quadrados escuros) */
     background-color: #0a0908;
 
+    /* 2. O truque do Xadrez com Gradientes */
+    background-image:
+            linear-gradient(90deg, rgba(242, 244, 243, 0.15) 50%, transparent 50%),
+            linear-gradient(rgba(242, 244, 243, 0.15) 50%, transparent 50%);
+
+    /* 3. O tamanho de cada quadradinho do xadrez */
+    background-size: 60px 60px;
+}
+
+#login {
+    border-top: 1px solid #ffffff75;
+    border-left: 1px solid rgb(255 255 255 / 0.39);
+    backdrop-filter: blur(10px);
     width: 600px;
     height: 500px;
 
     margin-left: 30vw;
     margin-top: 10vw;
     border-radius: 30px;
-    padding: 30px;
+    padding: 40px; /* Aumentei um pouco o respiro interno */
     box-sizing: border-box;
 
-    /* Ativa o Grid */
     display: grid;
-    /* Define duas colunas de tamanhos iguais */
+    /* Mantém as duas colunas do topo onde estão os títulos */
     grid-template-columns: 1fr 1fr;
-    /* Centraliza os elementos verticalmente dentro do espaço deles */
+    /* Define o tamanho das 3 linhas: auto para os textos e 1fr para distribuir o espaço */
+    grid-template-rows: auto auto auto;
     align-items: start;
-    gap: 20px;
+    gap: 25px;
 
-    /* O MAPA DO SEU GRID: Aqui você diz quem fica do lado de quem */
+    /* O MAPA DO GRID: Repetir o nome faz o bloco ocupar as duas colunas */
     grid-template-areas:
-        "esquerda direita";
-}
+        "esquerda     direita"
+        "campoEmail   campoEmail"
+        "campoSenha   campoSenha";
 
-/* 2. CONFIGURAÇÃO DOS FILHOS (DANDO OS NOMES ÀS ÁREAS) */
+    box-shadow: 15px 16px 15px -5px rgba(0,0,0,0.50);
+}
 
 #titulo-login {
     color: #f2f4f3;
-    font-size: 45px;
+    font-size: 55px; /* Ajustado para bater com o tamanho da sua imagem */
     text-align: start;
     font-family: "Bebas Neue", sans-serif;
-
-    /* Vincula este elemento à área da esquerda no mapa */
+    margin: 0;
     grid-area: esquerda;
 }
 
 #subTitulo-login {
     color: #f2f4f3;
-    font-size: 45px;
+    font-size: 55px;
+    font-family: "Bebas Neue", sans-serif;
+    margin: 0;
+    text-align: right; /* Joga o "FIGURINHOS" para o canto direito para alinhar bonito */
+    grid-area: direita;
+}
+
+/* Conecta a div do email à segunda linha inteira */
+.area-email {
     font-family: "Bebas Neue", sans-serif;
 
-    /* Vincula este elemento à área da direita no mapa */
-    grid-area: direita;
+    grid-area: campoEmail;
+}
+
+/* Conecta a div da senha à terceira linha inteira (embaixo do email) */
+.area-senha {
+    font-family: "Bebas Neue", sans-serif;
+
+    grid-area: campoSenha;
+}
+
+/* Ajustes para os inputs ocuparem a largura total da linha do grid */
+input {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: none;
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+#inp-esqueci-senha{
+    color: #f2f4f3;
+}
+
+.inp-submit{
+    font-family: "Bebas Neue", sans-serif;
+}
+.inp-submit:hover {
+    transition: 0.4s;
+    background-color: #838383;
+    border-radius: 5px;
+}
+.inp-submit:not(:hover) {
+    transition: 0.4s;
 }
